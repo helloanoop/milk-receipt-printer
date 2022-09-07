@@ -1,0 +1,26 @@
+{
+  "name": "milk-receipt-printer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "classnames": "^2.3.1",
+    "next": "12.0.8",
+    "postcss": "^8.4.14",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.36.0",
+    "styled-components": "^5.3.3",
+    "tailwindcss": "^3.0.19"
+  },
+  "devDependencies": {
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1"
+  }
+}
