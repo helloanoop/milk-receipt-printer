@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Receipt from 'components/Receipt';
 
 export default function Index() {
   return (
@@ -10,7 +11,7 @@ export default function Index() {
       </Head>
 
       <main className="page page-home">
-        Hello World
+        <Receipt />
       </main>
 
       <footer>
