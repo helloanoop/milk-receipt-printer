@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  font-family: Arial, Helvetica, sans-serif;
   @media print {
     font-size: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
 
     .title {
       font-size: 2.5rem;
