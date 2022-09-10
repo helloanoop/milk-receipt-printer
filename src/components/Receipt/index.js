@@ -4,7 +4,7 @@ import StyledWrapper from './StyledWrapper';
 const Receipt = () => {
   return (
     <StyledWrapper>
-      <h2 className='text-center font-bold text-xl'>KSHEERAM DIARY</h2>
+      <h2 className='text-center font-bold text-xl'>SREE SHANKARA DIARY</h2>
       <div className='text-center mt-4'>
         <span className='block'>Subhash P.S, Puliparambil House, Vatanapally</span>
         <span className='block'>Ph: 2601111, 9645377150</span>
@@ -149,6 +149,9 @@ const Receipt = () => {
           <span className='font-bold'>Month: </span>October 2023
         </div>
         <div className='mt-2'>
+          <span className='font-bold'>Total Amount: </span>
+        </div>
+        <div>
           <span className='font-bold'>Received Amount: </span>
         </div>
         <div>

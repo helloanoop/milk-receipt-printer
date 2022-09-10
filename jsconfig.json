@@ -4,8 +4,10 @@
     "allowSyntheticDefaultImports": false,
     "baseUrl": "./",
     "paths": {
+      "constants/*": ["src/constants/*"],
       "components/*": ["src/components/*"],
-      "pageComponents/*": ["src/pageComponents/*"]
+      "pageComponents/*": ["src/pageComponents/*"],
+      "utils/*": ["src/utils/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

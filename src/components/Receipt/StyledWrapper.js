@@ -16,8 +16,7 @@ const Wrapper = styled.div`
         border-right: solid 1px silver;
 
         &.date {
-          font-weight: bold;
-          padding-left: 1rem;
+          padding-left: 0.5rem;
         }
       }
     }
