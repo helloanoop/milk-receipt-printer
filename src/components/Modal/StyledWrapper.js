@@ -57,6 +57,7 @@ const Wrapper = styled.div`
     }
 
     @media print {
+      color: black !important;
       width: 100vw;
       min-width: 100vw;
       max-width: 100vw;

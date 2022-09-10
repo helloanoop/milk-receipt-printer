@@ -22,7 +22,7 @@ export const PrintProvider = props => {
           handleClose={handleModalClose}
         >
           <ModalContent>
-            <Receipt />
+            <Receipt customer={showCustomerReceipt}/>
           </ModalContent>
           <ModalFooter
             cancelText='Close' saveText='Print'

@@ -11,7 +11,7 @@ const ReportPage = () => {
     items: [
       {date: 1, milk: 1, curd: 0.5, buttermilk: 0, ghee: 0},
       {date: 2, milk: 1, curd: 0.5, buttermilk: 0, ghee: 0},
-      {date: 3, milk: 1, curd: 0, buttermilk: 0, ghee: 0}
+      {date: 3, milk: 1, curd: 0, buttermilk: 0, ghee: 1}
     ],
   }, {
     uuid: uuid(),
@@ -20,7 +20,7 @@ const ReportPage = () => {
     items: [
       {date: 1, milk: 0, curd: 0, buttermilk: 0, ghee: 0},
       {date: 2, milk: 1, curd: 0.5, buttermilk: 0, ghee: 0},
-      {date: 3, milk: 1, curd: 0, buttermilk: 0, ghee: 0}
+      {date: 3, milk: 1, curd: 0, buttermilk: 0, ghee: 1}
     ],
   }, {
     uuid: uuid(),
