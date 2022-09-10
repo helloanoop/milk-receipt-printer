@@ -15,7 +15,7 @@ const Receipt = ({customer}) => {
   };
   return (
     <StyledWrapper>
-      <h2 className='text-center font-bold text-xl'>SREE SHANKARA DIARY</h2>
+      <h2 className='title text-center font-bold text-xl'>SRI SHANKARA DIARY</h2>
       <div className='text-center text-sm mt-1'>
         <span className='block'>Subhash P.S, Puliparambil House, Vatanapally</span>
         <span className='block'>Ph: 2601111, 9645377150</span>
