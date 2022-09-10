@@ -30,13 +30,15 @@ const Wrapper = styled.div`
       font-weight: 500;
       font-size: 2.5rem;
       margin-top: 1rem;
-      border-top: solid 3px black;
+      border-top: double 4px black;
       text-align: right;
+      padding-top: 0.5rem;
       padding-right: 2rem;
     }
 
     .upi {
       padding-right: 2rem;
+      text-align: right;
     }
   }
   table {
