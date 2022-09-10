@@ -34,7 +34,7 @@ const Receipt = () => {
               <td className='date'>2</td>
               <td>0</td>
               <td className='date'>13</td>
-              <td>1</td>
+              <td>1,1g,1b</td>
               <td className='date'>24</td>
               <td>1</td>
             </tr>
@@ -60,7 +60,7 @@ const Receipt = () => {
 
             <tr>
               <td className='date'>5</td>
-              <td>1</td>
+              <td>1,1c</td>
               <td className='date'>16</td>
               <td>1</td>
               <td className='date'>27</td>

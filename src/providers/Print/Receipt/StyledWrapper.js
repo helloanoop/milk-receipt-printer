@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   }
 
   .payment-receipt {
-    border-top: dotted 1px black;
+    border-top: dashed 1px black;
   }
 `;
 
