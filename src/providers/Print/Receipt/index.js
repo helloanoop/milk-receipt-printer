@@ -32,7 +32,7 @@ const Receipt = ({customer}) => {
       </div>
 
       <div className='mt-6'>
-        <table>
+        <table className='milk-grid'>
           <tbody>
             <tr>
               <DateLabel date={1} />
@@ -141,8 +141,19 @@ const Receipt = ({customer}) => {
         </table>
       </div>
 
-      <div className='mt-6'>
-        <span className='font-bold'> Milk</span>: 10 ltrs
+      <div className='total-grid-container'>
+        <table className='total-grid'>
+          <tbody>
+            <tr>
+              <td>Milk: (10 * 45)</td>
+              <td>450</td>
+            </tr>
+            <tr>
+              <td>Curd: (2 * 30)</td>
+              <td>60</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div className='mt-6 total-amount'>

@@ -36,7 +36,8 @@ const Wrapper = styled.div`
       text-align: right;
     }
   }
-  table {
+
+  table.milk-grid {
     width: 100%;
     border-top: solid 1px silver;
     border-left: solid 1px silver;
@@ -64,6 +65,50 @@ const Wrapper = styled.div`
 
         &.date {
           padding-left: 0.5rem;
+        }
+      }
+    }
+  }
+
+  div.total-grid-container {
+    display: flex;
+    justify-content: flex-end;
+
+    @media print{
+      padding-right: 2rem;
+    }
+  }
+
+
+  table.total-grid {
+    margin-top: 1rem;
+    border-top: solid 1px silver;
+    border-left: solid 1px silver;
+
+    @media print{
+      border-top: solid 1px black;
+      border-left: solid 1px black;
+      margin-bottom: 1rem;
+    }
+
+    tr {
+      border-bottom: solid 1px silver;
+      @media print{
+        border-bottom: solid 1px black;
+      }
+
+      td {
+        text-align: left;
+
+        &:nth-child(2) {
+          text-align: right;
+        }
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+
+        border-right: solid 1px silver;
+        @media print{
+          border-right: solid 1px black;
         }
       }
     }
