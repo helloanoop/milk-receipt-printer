@@ -21,7 +21,7 @@ const Receipt = ({customer}) => {
         <span className='block'>Ph: 2601111, 9645377150</span>
       </div>
 
-      <div className='mt-4'>
+      <div className='mt-4 customer-details'>
         <div>
           <span className='font-bold'>Name: </span>
           {customer.name} (Ph: {customer.phone})
@@ -154,7 +154,7 @@ const Receipt = ({customer}) => {
       </div>
 
       <div className='payment-receipt mt-6'>
-        <div className='mt-2 mb-4 text-center text-sm'>Return this while making payment</div>
+        <div className='mt-2 mb-4 text-center text-sm return-label'>Return this while making payment</div>
         <div>
           <span className='font-bold'>Name: </span>Sreelakshmi
         </div>

@@ -1,14 +1,29 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  font-family: Arial, Helvetica, sans-serif;
   @media print {
+    font-family: Inter, Arial, Helvetica, sans-serif;
     font-size: 2rem;
 
     .title {
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 2rem;
+    }
+
+    .customer-details {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .payment-receipt {
+      margin-top: 2rem;
+      border-top: dashed 2px black;
+    }
+
+    .return-label {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
   }
   table {
@@ -19,6 +34,7 @@ const Wrapper = styled.div`
     @media print{
       border-top: solid 1px black;
       border-left: solid 1px black;
+      margin-bottom: 1rem;
     }
 
     tr {
