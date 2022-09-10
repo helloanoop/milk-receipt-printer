@@ -62,7 +62,7 @@ const Wrapper = styled.div`
       min-width: 100vw;
       max-width: 100vw;
       margin-top: 0;
-      margin-bottom: 0;
+      margin-bottom: -1rem;
     }
     animation: fade-and-slide-in-from-top .50s forwards cubic-bezier(.19,1,.22,1);
   }
