@@ -18,12 +18,25 @@ const Wrapper = styled.div`
 
     .payment-receipt {
       margin-top: 2rem;
-      border-top: dashed 2px black;
+      border-top: dashed 4px black;
     }
 
     .return-label {
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
+    }
+
+    .total-amount {
+      font-weight: 500;
+      font-size: 2.5rem;
+      margin-top: 1rem;
+      border-top: solid 3px black;
+      text-align: right;
+      padding-right: 2rem;
+    }
+
+    .upi {
+      padding-right: 2rem;
     }
   }
   table {

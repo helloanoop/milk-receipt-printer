@@ -145,11 +145,11 @@ const Receipt = ({customer}) => {
         <span className='font-bold'> Milk</span>: 10 ltrs
       </div>
 
-      <div className='mt-6'>
+      <div className='mt-6 total-amount'>
         <span className='font-bold'> Total Amount</span>: Rs 290
       </div>
 
-      <div className='mt-6'>
+      <div className='mt-6 upi'>
         <span className='font-bold'>Pay via UPI:</span> 9961610182
       </div>
 
