@@ -145,12 +145,12 @@ const Receipt = ({customer}) => {
         <table className='total-grid'>
           <tbody>
             <tr>
-              <td>Milk: (10 * 45)</td>
-              <td>450</td>
+              <td>Milk: 10 x 45</td>
+              <td>= 450</td>
             </tr>
             <tr>
-              <td>Curd: (2 * 30)</td>
-              <td>60</td>
+              <td>Curd: 2 x 30</td>
+              <td>= 60</td>
             </tr>
           </tbody>
         </table>
