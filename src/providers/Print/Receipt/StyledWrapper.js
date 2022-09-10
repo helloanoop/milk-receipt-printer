@@ -16,11 +16,6 @@ const Wrapper = styled.div`
       margin-bottom: 1rem;
     }
 
-    .payment-receipt {
-      margin-top: 2rem;
-      border-top: dashed 4px black;
-    }
-
     .return-label {
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
@@ -76,6 +71,11 @@ const Wrapper = styled.div`
 
   .payment-receipt {
     border-top: dashed 1px black;
+
+    @media print {
+      margin-top: 4rem;
+      border-top: dashed 4px black;
+    }
   }
 `;
 
