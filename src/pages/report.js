@@ -10,7 +10,7 @@ export default function ReportPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="page page-list">
+      <main className="page page-list hide-when-print">
         <Report />
       </main>
 

@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   MILK,
   CURD,
   BUTTERMILK,
   GHEE
 } from 'constants/report';
+import { usePrint } from 'providers/Print';
 import { getItemTotal } from 'utils/report'; 
 import StyledWrapper from './StyledWrapper';
 
 const CustomersList = ({customers}) => {
   customers = customers || [];
+
+  const {
+    print
+  } = usePrint();
+
+  const openPrintModal = (c) => print(c);
 
   return (
     <StyledWrapper>
@@ -36,7 +43,7 @@ const CustomersList = ({customers}) => {
                 <td>{getItemTotal(c.items, BUTTERMILK)}</td>
                 <td>{getItemTotal(c.items, GHEE)}</td>
                 <td className='text-blue-700'>
-                  <button>View</button>
+                  <button onClick={() => openPrintModal(c)}>View</button>
                   <button className='ml-5'>Print</button>
                 </td>
               </tr>

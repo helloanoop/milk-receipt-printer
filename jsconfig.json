@@ -6,6 +6,7 @@
     "paths": {
       "constants/*": ["src/constants/*"],
       "components/*": ["src/components/*"],
+      "providers/*": ["src/providers/*"],
       "pageComponents/*": ["src/pageComponents/*"],
       "utils/*": ["src/utils/*"]
     }

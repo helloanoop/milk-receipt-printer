@@ -44,7 +44,7 @@ const ReportPage = () => {
   return (
     <StyledWrapper>
       <h3 className='text-center mt-10 mb-10 text-xl font-600 underline'>
-        Report - October 2023
+        Report - October 2022
       </h3>
       <CustomersList customers={customers}/>
     </StyledWrapper>
