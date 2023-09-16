@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Receipt from './Receipt';
 import Modal, { ModalContent, ModalFooter} from 'components/Modal';
 
@@ -6,13 +6,25 @@ export const PrintContext = React.createContext();
 
 export const PrintProvider = props => {
   const [showCustomerReceipt, setShowCustomerReceipt] = useState(null);
+  const [options, setOptions] = useState({});
   const handleModalClose = () => setShowCustomerReceipt(null);
 
   const value = {
-    print: (customer) => {
+    print: (customer, options) => {
       setShowCustomerReceipt(customer);
+      setOptions({
+        ...options
+      });
     }
   };
+
+  useEffect(() => {
+    if (options.print) {
+      setTimeout(() => {
+        window.print();
+      }, 100);
+    }
+  }, [options]);
 
   return (
     <PrintContext.Provider value={value} {...props}>

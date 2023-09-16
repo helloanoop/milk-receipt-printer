@@ -14,6 +14,14 @@ const Wrapper = styled.div`
 
     .address {
       font-size: 2rem;
+
+      .street {
+        margin-bottom: 1rem;
+      }
+
+      .phone-number {
+
+      }
     }
 
     .customer-details {

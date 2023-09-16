@@ -44,8 +44,8 @@ const Receipt = ({customer}) => {
     <StyledWrapper>
       <h2 className='title text-center font-bold text-xl'>SREE SHANKARA DAIRY FARM</h2>
       <div className='text-center text-sm mt-1 address'>
-        <span className='block'>Ganeshamangalam West, Vatanapally</span>
-        <span className='block'>Ph: 9645377150</span>
+        <span className='block street'>Ganeshamangalam West, Vatanapally</span>
+        <span className='block phone-number'>Ph: 9645377150</span>
       </div>
 
       <div className='mt-4 customer-details'>

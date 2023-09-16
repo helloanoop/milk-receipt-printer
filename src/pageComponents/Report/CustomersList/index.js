@@ -9,7 +9,7 @@ const CustomersList = ({customers}) => {
     print
   } = usePrint();
 
-  const openPrintModal = (c) => print(c);
+  const openPrintModal = (c, options) => print(c, options);
 
   return (
     <StyledWrapper>
@@ -39,7 +39,7 @@ const CustomersList = ({customers}) => {
                 <td>{c.butter}</td>
                 <td className='text-blue-700'>
                   <button onClick={() => openPrintModal(c)}>View</button>
-                  {/* <button className='ml-5'>Print</button> */}
+                  <button  onClick={() => openPrintModal(c, {print: true})}className='ml-5'>Print</button>
                 </td>
               </tr>
             );
