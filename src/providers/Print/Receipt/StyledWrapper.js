@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   @media print {
     font-family: Inter, Arial, Helvetica, sans-serif;
-    font-size: 2rem;
+    font-size: 2.1rem;
 
     .title {
       font-size: 2.5rem;
