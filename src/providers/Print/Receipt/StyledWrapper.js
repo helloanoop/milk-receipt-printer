@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 
     .address {
       font-size: 2rem;
+      text-align: center;
 
       .street {
         margin-bottom: 1rem;
