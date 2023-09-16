@@ -1,51 +1,71 @@
 import React from 'react';
-import uuid from 'utils/uuid';
+import _ from 'lodash';
 import CustomersList from './CustomersList';
 import StyledWrapper from './StyledWrapper';
+import { useRouter } from 'next/router';
 
 const ReportPage = () => {
-  const customers = [{
-    uuid: uuid(),
-    name: 'Anusree',
-    phone: '9878978909',
-    items: [
-      {date: 1, milk: 1, curd: 0.5, buttermilk: 0, ghee: 0},
-      {date: 2, milk: 1, curd: 0.5, buttermilk: 0, ghee: 0},
-      {date: 3, milk: 1, curd: 0, buttermilk: 0, ghee: 1}
-    ],
-  }, {
-    uuid: uuid(),
-    name: 'Anoop',
-    phone: '9988009988',
-    items: [
-      {date: 1, milk: 0, curd: 0, buttermilk: 0, ghee: 0},
-      {date: 2, milk: 1, curd: 0.5, buttermilk: 0, ghee: 0},
-      {date: 3, milk: 1, curd: 0, buttermilk: 0, ghee: 1}
-    ],
-  }, {
-    uuid: uuid(),
-    name: 'Anoop',
-    phone: '9988009988',
-    items: [
-      {date: 1, milk: 0, curd: 0, buttermilk: 0, ghee: 0},
-      {date: 2, milk: 1, curd: 0.5, buttermilk: 0, ghee: 0},
-      {date: 3, milk: 1, curd: 0, buttermilk: 0, ghee: 0}
-    ],
-  }, {
-    uuid: uuid(),
-    name: 'Anoop',
-    phone: '9988009988',
-    items: [
-      {date: 1, milk: 0, curd: 0, buttermilk: 0, ghee: 0},
-      {date: 2, milk: 1, curd: 0.5, buttermilk: 0, ghee: 0},
-      {date: 3, milk: 1, curd: 0, buttermilk: 0, ghee: 1}
-    ],
-  }];
+  const router = useRouter();
+  const { month, year } = router.query;
+
+  const customers = JSON.parse(localStorage.getItem('customers')) || [];
+
+  const summaryItems = [];
+  let total = 0;
+
+  summaryItems.push({
+    name: 'Milk',
+    qty: _.reduce(customers, (sum, customer) => sum + customer.milk, 0),
+    unit: 'Litre',
+    pricePerUnit: 70,
+  });
+
   return (
     <StyledWrapper>
-      <h3 className='text-center mt-10 mb-10 text-xl font-600 underline'>
-        Report - October 2022
-      </h3>
+      <div className="flex items-center mb-4">
+        <h3 className='text-xl font-600 underline'>
+          Report - {month} {year}
+        </h3>
+        <button
+          onClick={() => router.push('/')}
+          className="text-blue-500 hover:underline cursor-pointer ml-4"
+        >
+          Back
+        </button>
+      </div>
+
+{/* Todo */}
+      {/* <h2 className='text-lg mb-4'>Summary</h2>
+      <table className='report-table'>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Unit</th>
+            <th>Price Per Unit</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {summaryItems.map((item, index) => (
+            <tr key={index}>
+              <td>{item.name}</td>
+              <td>{item.qty}</td>
+              <td>{item.unit}</td>
+              <td>{item.pricePerUnit}</td>
+              <td>{item.qty * item.pricePerUnit}</td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan="3">Total:</td>
+            <td>{total}</td>
+          </tr>
+        </tfoot>
+      </table> */}
+
+      <h2 className='text-lg mb-4'>Customers</h2>
       <CustomersList customers={customers}/>
     </StyledWrapper>
   );

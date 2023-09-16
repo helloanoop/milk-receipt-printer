@@ -8,10 +8,19 @@ import '../styles/page.scss';
 
 import '../styles/app.scss';
 
+function NoSsr({ children }) {
+  const SERVER_RENDERED = typeof navigator === 'undefined';
+
+  if (SERVER_RENDERED) {
+    return null;
+  }
+
+  return <>{children}</>;
+}
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <NoSsr>
       <Head>
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -22,7 +31,7 @@ function MyApp({ Component, pageProps }) {
       <PrintProvider>
         <Component {...pageProps} />
       </PrintProvider>
-    </>
+    </NoSsr>
   );
 }
 

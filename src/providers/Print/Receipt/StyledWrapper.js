@@ -82,18 +82,18 @@ const Wrapper = styled.div`
 
   table.total-grid {
     margin-top: 1rem;
+    text-align: right;
 
     @media print{
       margin-bottom: 1rem;
     }
 
     tr {
-
       td {
-        text-align: left;
+        text-align: right;
 
-        &:nth-child(2) {
-          text-align: right;
+        &:nth-child(1) {
+          text-align: left;
         }
         padding-left: 0.5rem;
         padding-right: 0.5rem;

@@ -27,6 +27,7 @@ export const PrintProvider = props => {
           <ModalFooter
             cancelText='Close' saveText='Print'
             handleCancel={handleModalClose}
+            handleSubmit={() => window.print()}
           />
         </Modal>
       )}

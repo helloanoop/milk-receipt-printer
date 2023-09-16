@@ -1,12 +1,5 @@
-import React, { useState } from 'react';
-import {
-  MILK,
-  CURD,
-  BUTTERMILK,
-  GHEE
-} from 'constants/report';
+import React from 'react';
 import { usePrint } from 'providers/Print';
-import { getItemTotal } from 'utils/report'; 
 import StyledWrapper from './StyledWrapper';
 
 const CustomersList = ({customers}) => {
@@ -29,6 +22,7 @@ const CustomersList = ({customers}) => {
             <th>Curd</th>
             <th>Butter Milk</th>
             <th>Ghee</th>
+            <th>Butter</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -38,13 +32,14 @@ const CustomersList = ({customers}) => {
               <tr key={c.uuid}>
                 <td>{c.name}</td>
                 <td>{c.phone}</td>
-                <td>{getItemTotal(c.items, MILK)}</td>
-                <td>{getItemTotal(c.items, CURD)}</td>
-                <td>{getItemTotal(c.items, BUTTERMILK)}</td>
-                <td>{getItemTotal(c.items, GHEE)}</td>
+                <td>{c.milk}</td>
+                <td>{c.curd}</td>
+                <td>{c.buttermilk}</td>
+                <td>{c.ghee}</td>
+                <td>{c.butter}</td>
                 <td className='text-blue-700'>
                   <button onClick={() => openPrintModal(c)}>View</button>
-                  <button className='ml-5'>Print</button>
+                  {/* <button className='ml-5'>Print</button> */}
                 </td>
               </tr>
             );

@@ -1,11 +1,38 @@
 import React from 'react';
-import { getItemLabelToDisplayInGrid } from 'utils/report';
+import { useRouter } from 'next/router';
 import StyledWrapper from './StyledWrapper';
 
+// parse and return result rounded to 2 decimal places
+const multiply = (a, b) => {
+  return Math.round((a * b) * 100) / 100;
+};
+
 const Receipt = ({customer}) => {
+  const router = useRouter();
+  const { month, year } = router.query;
+
+  const totalAmount = 0;
+
+  if(customer.milk > 0) {
+    totalAmount += multiply(customer.milk, 70);
+  }
+  if(customer.curd > 0) {
+    totalAmount += multiply(customer.curd, 30);
+  }
+  if(customer.buttermilk > 0) {
+    totalAmount += multiply(customer.buttermilk, 30);
+  }
+  if(customer.butter > 0) {
+    totalAmount += multiply(customer.butter, 600);
+  }
+  if(customer.ghee > 0) {
+    totalAmount += multiply(customer.ghee, 1200);
+  }
+
   const ItemLabel = ({date}) => {
+    const entry = customer.milkEntries.find((e) => e.date == date);
     return (
-      <td>{getItemLabelToDisplayInGrid(customer.items, date)}</td>
+      <td>{entry.value}</td>
     );
   };
   const DateLabel = ({date}) => {
@@ -15,10 +42,10 @@ const Receipt = ({customer}) => {
   };
   return (
     <StyledWrapper>
-      <h2 className='title text-center font-bold text-xl'>SRI SHANKARA DIARY</h2>
+      <h2 className='title text-center font-bold text-xl'>SREE SHANKARA DAIRY FARM</h2>
       <div className='text-center text-sm mt-1'>
-        <span className='block'>Subhash P.S, Puliparambil House, Vatanapally</span>
-        <span className='block'>Ph: 2601111, 9645377150</span>
+        <span className='block'>Ganeshamangalam West, Vatanapally</span>
+        <span className='block'>Ph: 9645377150</span>
       </div>
 
       <div className='mt-4 customer-details'>
@@ -27,7 +54,7 @@ const Receipt = ({customer}) => {
           {customer.name} (Ph: {customer.phone})
         </div>
         <div>
-          <span className='font-bold'>Month: </span>October 2023
+          <span className='font-bold'>Month: </span> {month} {year}
         </div>
       </div>
 
@@ -144,20 +171,47 @@ const Receipt = ({customer}) => {
       <div className='total-grid-container'>
         <table className='total-grid'>
           <tbody>
-            <tr>
-              <td>Milk: 10 x 45</td>
-              <td>= 450</td>
-            </tr>
-            <tr>
-              <td>Curd: 2 x 30</td>
-              <td>= 60</td>
-            </tr>
+            {customer.milk > 0 && (
+              <tr>
+                <td>Milk</td>
+                <td>{customer.milk} x 70 =</td>
+                <td>{multiply(customer.milk, 70)}</td>
+              </tr>
+            )}
+            {customer.curd > 0 && (
+              <tr>
+                <td>Curd</td>
+                <td>{customer.curd} x 30 =</td>
+                <td>{multiply(customer.curd, 30)}</td>
+              </tr>
+            )}
+            {customer.buttermilk > 0 && (
+              <tr>
+                <td>Butter Milk</td>
+                <td>{customer.buttermilk} x 30 =</td>
+                <td>{multiply(customer.buttermilk, 30)}</td>
+              </tr>
+            )}
+            {customer.butter > 0 && (
+              <tr>
+                <td>Butter</td>
+                <td>{customer.butter} x 500 =</td>
+                <td>{multiply(customer.butter, 600)}</td>
+              </tr>
+            )}
+            {customer.ghee > 0 && (
+              <tr>
+                <td>Ghee</td>
+                <td>{customer.ghee} x 1200 =</td>
+                <td>{multiply(customer.ghee, 1200)}</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
 
       <div className='mt-6 total-amount'>
-        <span className='font-bold'> Total Amount</span>: Rs 290
+        <span className='font-bold'> Total Amount</span>: Rs {totalAmount}
       </div>
 
       <div className='mt-6 upi'>
@@ -170,7 +224,7 @@ const Receipt = ({customer}) => {
           <span className='font-bold'>Name: </span>Sreelakshmi
         </div>
         <div>
-          <span className='font-bold'>Month: </span>October 2023
+          <span className='font-bold'>Month: </span> {month} {year}
         </div>
         <div className='mt-2'>
           <span className='font-bold'>Total Amount: </span>
