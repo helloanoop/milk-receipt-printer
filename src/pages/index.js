@@ -191,7 +191,7 @@ export default function Index() {
       <main className="page page-home">
         <div className="container mx-auto py-8">
           <img src="/cow.png" alt="Sree Shankara Milk Dairy Farm" className="w-32 mb-4" />
-          <header className="text-4xl font-bold mb-8">Sree Shankara Milk Dairy Farm</header>
+          <header className="text-4xl font-bold mb-8">Sree Shankara Dairy Farm</header>
           <div className="bg-white p-4 rounded shadow-md">
             <h2 className="text-xl font-semibold mb-4">Upload Receipt Data</h2>
             <form>
