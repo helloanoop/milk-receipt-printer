@@ -9,6 +9,11 @@ const Wrapper = styled.div`
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .address {
+      font-size: 2rem;
     }
 
     .customer-details {
@@ -17,6 +22,7 @@ const Wrapper = styled.div`
     }
 
     .return-label {
+      font-size: 2rem;
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
     }
