@@ -51,7 +51,7 @@ const Receipt = ({customer}) => {
       <div className='mt-4 customer-details'>
         <div>
           <span className='font-bold'>Name: </span>
-          {customer.name} (Ph: {customer.phone})
+          {customer.name} {customer.phone ? `(Ph: ${customer.phone})` : ''}
         </div>
         <div>
           <span className='font-bold'>Month: </span> {month} {year}
@@ -221,13 +221,13 @@ const Receipt = ({customer}) => {
       <div className='payment-receipt mt-6'>
         <div className='mt-2 mb-4 text-center text-sm return-label'>Return this while making payment</div>
         <div>
-          <span className='font-bold'>Name: </span>Sreelakshmi
+          <span className='font-bold'>Name: </span>{customer.name}
         </div>
         <div>
           <span className='font-bold'>Month: </span> {month} {year}
         </div>
         <div className='mt-2'>
-          <span className='font-bold'>Total Amount: </span>
+          <span className='font-bold'>Total Amount: Rs {totalAmount}</span>
         </div>
         <div>
           <span className='font-bold'>Received Amount: </span>
