@@ -23,6 +23,7 @@ const CustomersList = ({customers}) => {
             <th>Butter Milk</th>
             <th>Ghee</th>
             <th>Butter</th>
+            <th>Balance</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -37,6 +38,7 @@ const CustomersList = ({customers}) => {
                 <td>{c.buttermilk}</td>
                 <td>{c.ghee}</td>
                 <td>{c.butter}</td>
+                <td>{c.balance}</td>
                 <td className='text-blue-700'>
                   <button onClick={() => openPrintModal(c)}>View</button>
                   <button  onClick={() => openPrintModal(c, {print: true})}className='ml-5'>Print</button>

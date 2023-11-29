@@ -7,6 +7,11 @@ const multiply = (a, b) => {
   return Math.round((a * b) * 100) / 100;
 };
 
+// round to 2 decimal places
+const round = (a) => {
+  return Math.round(a * 100) / 100;
+};
+
 const Receipt = ({customer}) => {
   const router = useRouter();
   const { month, year } = router.query;
@@ -16,17 +21,23 @@ const Receipt = ({customer}) => {
   if(customer.milk > 0) {
     totalAmount += multiply(customer.milk, 70);
   }
+
+  // Curd, Butter Milk, Butter, Ghee are absolute values
   if(customer.curd > 0) {
-    totalAmount += multiply(customer.curd, 30);
+    totalAmount += round(customer.curd);
   }
   if(customer.buttermilk > 0) {
-    totalAmount += multiply(customer.buttermilk, 30);
+    totalAmount += round(customer.buttermilk);
   }
   if(customer.butter > 0) {
-    totalAmount += multiply(customer.butter, 600);
+    totalAmount += round(customer.butter);
   }
   if(customer.ghee > 0) {
-    totalAmount += multiply(customer.ghee, 1200);
+    totalAmount += round(customer.ghee);
+  }
+
+  if(!isNaN(customer.balance)) {
+    totalAmount += round(customer.balance);
   }
 
   const ItemLabel = ({date}) => {
@@ -181,29 +192,36 @@ const Receipt = ({customer}) => {
             {customer.curd > 0 && (
               <tr>
                 <td>Curd</td>
-                <td>{customer.curd} x 30 =</td>
-                <td>{multiply(customer.curd, 30)}</td>
+                <td>=</td>
+                <td>{round(customer.curd)}</td>
               </tr>
             )}
             {customer.buttermilk > 0 && (
               <tr>
                 <td>Butter Milk</td>
-                <td>{customer.buttermilk} x 30 =</td>
-                <td>{multiply(customer.buttermilk, 30)}</td>
+                <td>=</td>
+                <td>{round(customer.buttermilk)}</td>
               </tr>
             )}
             {customer.butter > 0 && (
               <tr>
                 <td>Butter</td>
-                <td>{customer.butter} x 500 =</td>
-                <td>{multiply(customer.butter, 600)}</td>
+                <td>=</td>
+                <td>{round(customer.butter)}</td>
               </tr>
             )}
             {customer.ghee > 0 && (
               <tr>
                 <td>Ghee</td>
-                <td>{customer.ghee} x 1200 =</td>
-                <td>{multiply(customer.ghee, 1200)}</td>
+                <td>=</td>
+                <td>{round(customer.ghee)}</td>
+              </tr>
+            )}
+            {!isNaN(customer.balance) && (
+              <tr>
+                <td>Balance</td>
+                <td>=</td>
+                <td>{round(customer.balance)}</td>
               </tr>
             )}
           </tbody>

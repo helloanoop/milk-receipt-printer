@@ -35,6 +35,7 @@ function parseExcelFile(file) {
             buttermilk: parseFloat(row.ButterMilk),
             ghee: parseFloat(row.Ghee),
             butter: parseFloat(row.Butter),
+            balance: parseFloat(row.Balance),
             milkEntries: []
           };
 
