@@ -10,16 +10,6 @@ const ReportPage = () => {
 
   const customers = JSON.parse(localStorage.getItem('customers')) || [];
 
-  const summaryItems = [];
-  let total = 0;
-
-  summaryItems.push({
-    name: 'Milk',
-    qty: _.reduce(customers, (sum, customer) => sum + customer.milk, 0),
-    unit: 'Litre',
-    pricePerUnit: 70,
-  });
-
   return (
     <StyledWrapper>
       <div className="flex items-center mb-4">
@@ -33,37 +23,6 @@ const ReportPage = () => {
           Back
         </button>
       </div>
-
-{/* Todo */}
-      {/* <h2 className='text-lg mb-4'>Summary</h2>
-      <table className='report-table'>
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Qty</th>
-            <th>Unit</th>
-            <th>Price Per Unit</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {summaryItems.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>{item.qty}</td>
-              <td>{item.unit}</td>
-              <td>{item.pricePerUnit}</td>
-              <td>{item.qty * item.pricePerUnit}</td>
-            </tr>
-          ))}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colSpan="3">Total:</td>
-            <td>{total}</td>
-          </tr>
-        </tfoot>
-      </table> */}
 
       <h2 className='text-lg mb-4'>Customers</h2>
       <CustomersList customers={customers}/>
