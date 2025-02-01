@@ -94,7 +94,7 @@ const Receipt = ({customer}) => {
               <DateLabel date={3} />
               <ItemLabel date={3} />
               <DateLabel date={14} />
-              <ItemLabel date={15} />
+              <ItemLabel date={14} />
               <DateLabel date={25} />
               <ItemLabel date={25} />
             </tr>
