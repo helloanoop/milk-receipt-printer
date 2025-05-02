@@ -19,7 +19,7 @@ const Receipt = ({customer}) => {
   const totalAmount = 0;
 
   if(customer.milk > 0) {
-    totalAmount += multiply(customer.milk, 70);
+    totalAmount += multiply(customer.milk, 80);
   }
 
   // Curd, Butter Milk, Butter, Ghee are absolute values
