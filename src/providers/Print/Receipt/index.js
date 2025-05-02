@@ -185,8 +185,8 @@ const Receipt = ({customer}) => {
             {customer.milk > 0 && (
               <tr>
                 <td>Milk</td>
-                <td>{customer.milk} x 70 =</td>
-                <td>{multiply(customer.milk, 70)}</td>
+                <td>{customer.milk} x 80 =</td>
+                <td>{multiply(customer.milk, 80)}</td>
               </tr>
             )}
             {customer.curd > 0 && (
